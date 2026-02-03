@@ -1,0 +1,102 @@
+.dboard {
+  position: relative;
+  height: calc(100vh - 70px); 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dboard-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.dboard-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.dboard-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.dboard-title {
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+
+.dboard-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.dboard-description {
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.4;
+  max-width: 300px;
+}
+
+.dboard-line {
+  height: 90px;
+  width: auto;
+}
+
+.dboard-date {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.dboard-date .month { font-size: 22px; font-weight: 400; }
+.dboard-date .day { font-size: 22px; font-weight: 300; }
+
+
+.dboard-search {
+  width: 600px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin: 0 auto;
+  display: flex;
+  padding-left: 10px;
+}
+
+.dboard-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.dboard-search button {
+  width: 65px;
+  height: 100%;
+  background: #ffb36c;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
