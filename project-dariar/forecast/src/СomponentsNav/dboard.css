@@ -1,102 +1,135 @@
 .dboard {
-  position: relative;
-  height: calc(100vh - 70px); 
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    color: white;
 }
 
 .dboard-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 126%;
+    object-fit: cover;
+    z-index: -2;
 }
 
 .dboard-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 0;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
 }
 
 .dboard-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 
 .dboard-title {
-  font-size: 54px;
-  font-weight: 600;
-  margin-bottom: 60px;
-  letter-spacing: 1px;
+    font-size: 42px; 
+    margin-bottom: 30px;
+    font-weight: 700;
 }
-
 
 .dboard-middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 35px;
 }
 
+
 .dboard-description {
-  text-align: right;
-  font-size: 18px;
-  line-height: 1.4;
-  max-width: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: right;
 }
 
 .dboard-line {
-  height: 90px;
-  width: auto;
+    height: 70px;
 }
+
 
 .dboard-date {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+    text-align: left;
 }
 
-.dboard-date .month { font-size: 22px; font-weight: 400; }
-.dboard-date .day { font-size: 22px; font-weight: 300; }
+.month {
+     font-size: 20px;
+      font-weight: bold;
+       display: block; }
+
+.day {
+     font-size: 16px; 
+     opacity: 0.9; }
 
 
-.dboard-search {
-  width: 600px;
-  height: 55px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  margin: 0 auto;
-  display: flex;
-  padding-left: 10px;
+.search-box {
+    position: relative; 
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
 }
 
-.dboard-search input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  color: #333;
-  outline: none;
+.search-input {
+    width: 100%;
+    padding: 14px 60px 14px 25px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: white;
+    color: #333;
 }
 
-.dboard-search button {
-  width: 65px;
-  height: 100%;
-  background: #ffb36c;
-  border: none;
-  border-radius: 0 12px 12px 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.search-submit {
+    position: absolute; 
+    right: 5px;
+    width: 42px;
+    height: 42px;
+    background-color: #FFB366;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
+.search-submit img {
+    width: 18px;
+}
+
+.search-submit:hover {
+    background-color: #fca146;
+}
+
+
+@media (max-width: 768px) {
+    .dboard-title { 
+        font-size: 32px; 
+    }
+    .dboard-middle {
+         flex-direction: column;
+          gap: 15px;
+         }
+     .dboard-date {
+         text-align: center;
+         }
+    .dboard-line { 
+        display: none;
+     }
 }

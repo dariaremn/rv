@@ -1,32 +1,55 @@
-import "./header.css"
-import navlogo from './7forest.png'
-import navwhoweare from './Who we are.png'
-import navcontscts from './Contacts.png'
-import navmenu from './Menu.png'
-import navuser from './usernav.png'
+import React, { useState } from 'react';
+import './header.css';
 
-function Header() {
-  return (
-    <header className="header">
-      <div className="header-container">
-      
-       
-         <img src={navlogo} alt="Logo" className="header-logo" />
+import logo from './7forest.png';
+import userIcon from './usernav.png';
+import nav1 from './Whoweare.png';
+import nav2 from './Contacts.png';
+import nav3 from './Menu.png';
 
-     
-        <nav className="header-nav">
-          <img src={navwhoweare} alt="" className="header-whoweare" />
-          <img src={navcontscts} alt="" className="header-contacts" />
-          <img src={navmenu} alt="" className="header-menu" />
-        </nav>
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-   
-        <div className="header-right">
-          <button className="header-btn">Sign Up</button>
-          <img src={navuser} alt="" className="header-user" />
-        </div>
-      </div>
-    </header>
-  );
-}
-export default Header
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    return (
+        <header className="header">
+            <div className="header-container">
+           
+                <div className="header-left">
+                    <img src={logo} alt="7forest" className="logo-img" />
+                </div>
+
+
+                <nav className="header-nav-desktop">
+                    <img src={nav1} alt="Who we are" className="nav-icon" />
+                    <img src={nav2} alt="Contacts" className="nav-icon" />
+                    <img src={nav3} alt="Menu" className="nav-icon" />
+                    <button className="signup-btn">Sign up</button>
+                    <img src={userIcon} alt="User" className="user-icon" />
+                </nav>
+
+
+                <div className="mobile-trigger" onClick={toggleMenu}>
+                    <span className="menu-label">Menu</span>
+                    <div className={`custom-arrow ${isMenuOpen ? 'open' : ''}`}></div>
+                </div>
+
+
+                <div className={`mobile-dropdown ${isMenuOpen ? 'show' : ''}`}>
+                    <img src={nav1} alt="Who we are" />
+                    <img src={nav2} alt="Contacts" />
+                    <img src={nav3} alt="Menu" />
+                    <hr />
+                    <button className="signup-btn">Sign up</button>
+                    <img src={userIcon} alt="User" className="user-icon" />
+                </div>
+
+            </div>
+        </header>
+    );
+};
+
+export default Header;
